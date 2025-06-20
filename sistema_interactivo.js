@@ -1,18 +1,24 @@
+//Funcion para validar que los datos ingresados sean letras
 function isString(name) {
+//Valida que sea letra y espacio y devuelve un valor booleano
   let isAlphabetic = /^[A-Za-z\s]+$/.test(name);
   while (isAlphabetic === false){
+//En caso de no ser letras validas, aparecerá un alert y un mansaje de error en la consola
     alert("Error, enter a valid name.");
     console.error("Error, enter a valid name");
+//Vuelve a pedir el nombre para ser evaluado nuevamente
     name = prompt("What is your name?");
     isAlphabetic = /^[A-Za-z]+$/.test(name);
   }
   return name;  
 }
 
+//Funcion para validar que los datos ingresados sean números enteros mayores a 0
 function isNumberInteger(number) {
   while (isNaN(number) || number < 0){
     alert("Error, enter a valid age.");
     console.error("Error, enter a valid age");
+//Vuelve a pedir la edad para ser evaluado nuevamente
     number = prompt("How old are you?");
   }
   return number;  
